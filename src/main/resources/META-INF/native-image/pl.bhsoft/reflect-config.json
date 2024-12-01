@@ -1,0 +1,35 @@
+
+[
+  {
+    "name": "org.eclipse.paho.client.mqttv3.logging.JSR47Logger",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.eclipse.paho.client.mqttv3.internal.ResourceBundleCatalog",
+    "allPublicFields": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "java.util.ResourceBundle",
+    "allPublicFields": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.eclipse.paho.client.mqttv3.internal.MessageCatalog",
+    "allPublicFields": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true
+  }
+
+]

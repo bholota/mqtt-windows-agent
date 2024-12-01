@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.graalvm.buildtools.native' version '0.9.12'
+}
+
+group = 'pl.bhsoft'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = "pl.bhsoft.Main"
+}
+
+graalvmNative {
+    toolchainDetection = false
+}
+
+
+// Task to create a fat/uber jar
+tasks.register('fatJar', Jar) {
+    archiveBaseName.set('MqttDisplayClient-fat') // Name of the jar
+    archiveClassifier.set('') // No classifier (default is empty)
+    archiveVersion.set('') // No version in the filename
+
+    from {
+        // Include compiled classes
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    with jar
+
+    manifest {
+        attributes(
+                'Main-Class': 'pl.bhsoft.Main' // Replace with your main class
+        )
+    }
+}
+
+dependencies {
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
