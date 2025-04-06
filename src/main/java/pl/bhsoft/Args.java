@@ -17,7 +17,7 @@ public class Args {
     public final String availablePayloadOnline;
     public final String availablePayloadOffline;
     public final String commandTopic;
-    public final long waitTime;
+    public final long waitTimeMilliseconds;
 
     public Args(String[] args) {
         // Parse command-line arguments
@@ -58,7 +58,7 @@ public class Args {
         availablePayloadOnline = properties.getProperty("mqtt.agent.available.payload.online");
         availablePayloadOffline = properties.getProperty("mqtt.agent.available.payload.offline");
         commandTopic = properties.getProperty("mqtt.agent.command.topic");
-        waitTime = Long.parseLong(properties.getProperty("mqtt.agent.available.wait_time_seconds"));
+        waitTimeMilliseconds = Long.parseLong(properties.getProperty("mqtt.agent.available.wait_time_milliseconds"));
     }
 
 

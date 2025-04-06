@@ -103,7 +103,7 @@ public final class MqttDisplayClient {
             // Send online message and wait
             sendMessage(arguments.availableTopic, "online");
             System.out.println("Worker is running...");
-            Thread.sleep(this.arguments.waitTime); // Sleep to avoid busy-waiting
+            Thread.sleep(this.arguments.waitTimeMilliseconds); // Sleep to avoid busy-waiting
         } catch (MqttException e) {
             System.err.println("Failed to publish message: " + e.getMessage());
             e.printStackTrace();
